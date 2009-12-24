@@ -5,6 +5,13 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 
+# webrat is used for testing links on pages. static_pages_spec.rb calls webrat
+require "webrat"
+
+Webrat.configure do |config|
+  config.mode = :rails
+end
+
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'
 
